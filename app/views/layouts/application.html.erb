@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <script src="https://kit.fontawesome.com/5426e91a66.js" crossorigin="anonymous"></script>
   <head>
     <title>Bookers2</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,17 +13,35 @@
 
   <body>
     <header>
+      Books
     <% if user_signed_in? %>
-      <li>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      </li>
+      <span>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fa-solid fa-right-from-bracket"></i>Log out
+        <% end %>
+      </span>
     <% else %>
-      <li>
-        <%= link_to "新規登録", new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_user_session_path %>
-      </li>
+      <span>
+        <%= link_to root_path do %>
+        <i class="fa-solid fa-house"></i>home
+        <% end %>
+      </span>
+      <span>
+        <%= link_to about_path do %>
+        <i class="fa-solid fa-link-horizontal"></i>>About
+        <% end %>
+      </span>
+      <span>
+        <%= link_to new_user_registration_path do %>
+        <<i class="fa-regular fa-user-plus"></i>Sing up
+        <% end %>
+      </span>
+      <span>
+        <%= link_to  new_user_session_path do %>
+        <i class="fa-solid fa-right-to-bracket"></i>Log in
+        <% end %>
+      </span>
+
     <% end %>
   </header>
     <%= yield %>

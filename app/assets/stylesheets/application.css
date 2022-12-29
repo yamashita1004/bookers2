@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.actions {
+    background : #006600;
+    color : #ffffff;
+}
